@@ -1,0 +1,66 @@
+@use "../../../scss/" as *;
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans&family=Saira:ital,wght@1,100&display=swap");
+
+.background {
+  min-height: 92vh;
+  max-height: 92vh;
+  width: 100%;
+  filter: brightness(80%);
+  @include tablet {
+    min-height: 75vh;
+    width: 100%;
+  }
+  @include mobile {
+    height: auto;
+    min-height: 50vh;
+    width: 100%;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  @include flex(center, center);
+  transform: translateY(30%);
+  .overlay {
+    background: rgba(184, 184, 184, 0.4);
+    padding: 0 2rem;
+    transform: skewX(-10deg);
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 50%;
+      width: 50%;
+      border-bottom: 3px solid $white;
+      border-left: 3px solid $white;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 50%;
+      width: 50%;
+      border-top: 3px solid $white;
+      border-right: 3px solid $white;
+    }
+    h1 {
+      font-family: "Encode Sans", sans-serif;
+      font-size: 4rem;
+      font-style: italic;
+      color: $white;
+      letter-spacing: 1.5rem;
+    }
+  }
+}

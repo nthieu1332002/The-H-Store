@@ -1,0 +1,130 @@
+@use "../../scss/" as *;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+.detail-container {
+  margin: 1rem 4rem;
+  @include flex(center, null);
+  font-size: 1.1rem;
+  font-family: "Open Sans", sans-serif;
+  max-width: 100%;
+  .detail-images {
+    flex: 4;
+    background-color: $background-color2;
+    box-shadow: $main-color 0px 15px 25px -10px;
+    margin: 0 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .image-display {
+      flex: 5;
+      img {
+        max-width: 100%;
+      }
+    }
+    .image-list {
+      flex: 1;
+      @include flex(center, center);
+      max-height: 100%;
+      .image-container {
+        flex: 1;
+        padding: 0 0.5rem;
+        img {
+          cursor: pointer;
+          max-width: 100%;
+          height: auto;
+          &:hover {
+            filter: brightness(80%);
+          }
+        }
+      }
+    }
+  }
+  .detail-info {
+    // background-color: $background-color;
+    // box-shadow: $main-color 0px 5px 10px -4px;
+    flex: 5;
+    padding: 0 2rem;
+    h5 {
+      color: $red;
+    }
+    span {
+      font-weight: bold;
+    }
+    .detail-info-title {
+      text-align: center;
+      .the-h-store {
+        @include the-h-store($main-color);
+      }
+    }
+    .detail-price {
+      color: $red;
+      sup {
+        color: grey;
+        font-size: 70%;
+      }
+    }
+    .select-quantity {
+      display: inline-flex;
+      font-size: 100%;
+      overflow: hidden;
+      transition: all 0.1s;
+      @include box-shadow();
+      .btn {
+        transition: all 0.1s;
+        font-weight: normal;
+        @include flex(center, center);
+        padding: 0.7rem;
+        color: $main-color;
+        background-color: $main-background;
+        cursor: pointer;
+        border: 1px solid $main-color;
+        @include box-shadow();
+        &:hover {
+          color: $main-background;
+          background-color: $main-hover-color;
+        }
+      }
+      .quantity {
+        font-size: 90%;
+        text-align: center;
+        height: auto;
+        max-width: 3rem;
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid $main-color;
+        border-bottom: 1px solid $main-color;
+        color: $main-color;
+        background-color: transparent;
+        outline: none;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+    .action {
+      display: flex;
+      margin-top: 1rem;
+      .add-to-cart {
+        text-transform: capitalize;
+        cursor: pointer;
+        font-size: 90%;
+        margin-right: 1rem;
+        padding: 0.7rem 1.6rem;
+        border: none;
+        color: $main-background;
+        background-color: $main-color;
+        border: 1px solid $main-color;
+        @include box-shadow();
+        &:hover {
+          color: $main-color;
+          background-color: transparent;
+          border: 1px solid $main-color;
+        }
+        &:active {
+          @include shadow-move($main-color);
+        }
+      }
+    }
+  }
+}

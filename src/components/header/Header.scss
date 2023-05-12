@@ -1,0 +1,246 @@
+@use "../../scss/" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $white;
+  .menu-icon {
+    display: none;
+  }
+  .nav-menu {
+    display: inline-flex;
+    width: 100%;
+    padding: 0 2rem;
+    .nav-home {
+      @include flex(null, center);
+      width: 30%;
+      .nav-link {
+        margin: 0 1rem;
+        padding: 0 0.5rem;
+        color: $main-color;
+        background: linear-gradient(90deg, $main-color, $main-color);
+        background-size: 0% 3px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        transition: 0.3s ease;
+        &:hover {
+          color: $main-hover-color;
+          background-size: 100% 3px;
+        }
+        &.active {
+          color: $main-color;
+          background-size: 100% 3px;
+        }
+      }
+    }
+    .nav-logo {
+      @include flex(center, center);
+      width: 50%;
+      img {
+        width: 150px;
+        height: auto;
+      }
+    }
+    .nav-user {
+      width: 20%;
+      @include flex(flex-end, center);
+      .nav-cart {
+        position: relative;
+        &:hover {
+          .cart-dropdown {
+            display: block;
+          }
+          .cart {
+            color: $white;
+            background-color: $main-color;
+          }
+        }
+      }
+      .cart-dropdown {
+        display: none;
+        position: absolute;
+        transform: translate(-7%, 10%);
+        background: $white;
+        top: 0;
+        right: 0;
+        min-height: 180px;
+        width: 300px;
+        padding: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        z-index: 2;
+        .cart-item-wrapper {
+          max-height: 270px;
+          overflow-y: scroll;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+          .cart-dropdown-item {
+            padding-bottom: 10px;
+            @include flex(space-between, center);
+            .item-image {
+              height: 80px;
+              padding: 5px;
+              img {
+                height: 100%;
+                width: auto;
+              }
+            }
+            .item-detail {
+              display: flex;
+              flex-direction: column;
+              max-width: 150px;
+              word-wrap: break-word;
+              .item-title {
+                color: $main-color;
+                font-weight: bold;
+                cursor: pointer;
+                &:hover {
+                  color: $main-hover-color;
+                }
+              }
+              .item-price {
+                font-weight: normal;
+                font-size: 13px;
+                span {
+                  font-weight: bold;
+                }
+              }
+            }
+            .item-delete {
+              color: $red;
+              cursor: pointer;
+              &:hover {
+                color: $main-color;
+              }
+            }
+          }
+        }
+        .action {
+          border-top: 1px solid $grey;
+          display: flex;
+          flex-direction: column;
+          .subtotal {
+            @include flex(space-between, center);
+            height: 2rem;
+          }
+          button {
+            padding: 10px 0;
+            border: none;
+            font-weight: bold;
+            color: $white;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+          }
+          .checkout {
+            background-color: $red;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+          .view-cart {
+            margin-bottom: 5px;
+            background-color: $main-color;
+            &:hover {
+              background-color: $main-hover-color;
+            }
+          }
+        }
+      }
+      .nav-link {
+        margin: 0 0.5rem;
+        padding: 0.5rem;
+        transition: 0.3s ease;
+        border-radius: 5px;
+        font-weight: 500;
+        &.cart {
+          @include flex(center, center);
+          font-size: 20px;
+          color: $main-color;
+          border-radius: 50%;
+          border: 1px solid $main-color;
+          margin-right: 1rem;
+          cursor: pointer;
+          position: relative;
+          .cart-number {
+            position: absolute;
+            background-color: $main-color;
+            color: $white;
+            font-size: 15px;
+            top: 0;
+            right: 0;
+            transform: translate(20%, -50%);
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            @include flex(center, center);
+          }
+        }
+
+        &.signin {
+          color: $red;
+          background-color: $white;
+          &:hover {
+            color: $white;
+            background-color: $red;
+          }
+        }
+        &.signup {
+          color: $white;
+          background-color: $red;
+          &:hover {
+            color: $black;
+            background-color: $white;
+          }
+        }
+      }
+      .profile-dropdown {
+        position: relative;
+        display: inline-block;
+        &:hover .profile-dropdown-content {
+          display: block;
+        }
+        .profile-icon {
+          @include flex(center, center);
+          font-size: 40px;
+          color: $main-color;
+          border-radius: 50%;
+          border: 1px solid $main-color;
+          cursor: pointer;
+        }
+        .profile-dropdown-content {
+          position: absolute;
+          display: none;
+          background: $white;
+          border: 0.1px solid rgb(233, 233, 233);
+          border-radius: 5px;
+          box-shadow: $main-hover-color 0px 3px 8px;
+          right: 0;
+          min-width: 160px;
+          z-index: 1000;
+          .nav-link {
+            display: block;
+            padding: 10px 10px;
+            overflow: hidden;
+            color: $main-color;
+            cursor: pointer;
+            &:hover {
+              color: $main-hover-color;
+              background: $background-dropdown-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

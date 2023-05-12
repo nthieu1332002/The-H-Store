@@ -1,0 +1,37 @@
+@use "../../../scss/" as *;
+  .view-all {
+    position: relative;
+    color: $main-hover-color;
+    font-weight: bold;
+    margin-left: 1rem;
+    &:hover {
+    color: $main-color;
+
+    }
+    .view-all-icon {
+      position: absolute;
+      top: 0;
+      transform: translateY(30%);
+    }
+  }
+.homepage-product {
+  margin: 1rem 2rem;
+  padding: 1rem 2rem;
+  background-color: $background-color2;
+  border-radius: 20px;
+  .product-header {
+    @include flex(space-between, center);
+    h3 {
+      color: $main-color;
+      position: relative;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      overflow: hidden;
+    }
+  }
+  .product-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+}

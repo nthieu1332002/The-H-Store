@@ -1,0 +1,110 @@
+@mixin flex($justify-content, $align-item) {
+  display: flex;
+  align-items: $align-item;
+  justify-content: $justify-content;
+}
+
+@mixin the-h-store($color) {
+  color: $color;
+}
+
+@mixin box-shadow() {
+  box-shadow: #9f257f 0px 10px 15px -10px;
+}
+
+@mixin shadow-move($color) {
+  opacity: 1;
+  box-shadow: $color 0px 15px 10px -7px;
+  transform: translateY(10%);
+}
+
+@mixin radio($radioColor, $color) {
+  [type="radio"] {
+    + label {
+      text-transform: capitalize;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    &:checked {
+      position: absolute;
+      + {
+        label {
+          position: relative;
+          padding-left: 28px;
+          cursor: pointer;
+          line-height: 20px;
+          display: inline-block;
+          color: $color;
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #ddd;
+            border-radius: 100%;
+            background: #fff;
+          }
+          &:after {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: $color;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            border-radius: 100%;
+            transition: all 0.2s ease;
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      }
+    }
+    &:not(:checked) {
+      position: absolute;
+      left: -9999px;
+      + {
+        label {
+          position: relative;
+          padding-left: 28px;
+          cursor: pointer;
+          line-height: 20px;
+          display: inline-block;
+          color: $radioColor;
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #ddd;
+            border-radius: 100%;
+          }
+          &:after {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: $color;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            border-radius: 100%;
+            transition: all 0.2s ease;
+            opacity: 0;
+            transform: scale(0);
+          }
+        }
+      }
+      &:hover {
+        + {
+          label {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+}

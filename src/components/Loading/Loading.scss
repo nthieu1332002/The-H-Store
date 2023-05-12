@@ -1,0 +1,7 @@
+@use "../../scss/" as *;
+
+.loading {
+    display: block;
+    margin: 1rem auto;
+    border-color: $main-hover-color;
+}

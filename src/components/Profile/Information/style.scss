@@ -1,0 +1,119 @@
+@use "../../../scss/" as *;
+
+.information-container {
+  h3 {
+    color: $grey1;
+  }
+  button {
+    cursor: pointer;
+    padding: 0.7rem 1rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: $main-color;
+    font-weight: bold;
+    transition: 0.2s;
+    @include box-shadow();
+    &:hover {
+      background-color: $main-hover-color;
+    }
+  }
+  input {
+    width: 100%;
+    outline: none;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid $main-color;
+    border-radius: 5px;
+    &:focus {
+      border: 1px solid $heart1;
+    }
+  }
+  .information-title {
+    h1 {
+      line-height: 1rem;
+      color: $main-color;
+    }
+  }
+  .information-content {
+    display: flex;
+    justify-content: space-between;
+    .avatar-action {
+      width: 30%;
+      .avatar {
+        @include flex(center, center);
+        @include box-shadow();
+        height: 150px;
+        width: 150px;
+        border: 1px solid $main-color;
+        border-radius: 50%;
+        margin-right: 1rem;
+        position: relative;
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+        .icon-camera {
+          @include flex(center, center);
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          color: $white;
+          background-color: $main-color;
+          cursor: pointer;
+          & > input {
+            display: none;
+          }
+          &:hover {
+            background-color: $heart1;
+          }
+        }
+      }
+    }
+    .form-information {
+      width: 70%;
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        .name {
+          @include flex(space-between, null);
+          & > input:first-child {
+            margin-right: 1rem;
+          }
+        }
+      }
+
+      
+    }
+  }
+  .change-password-container {
+    .form-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+        input {
+          border: 1px solid $green;
+        }
+
+      input {
+        width: 50%;
+      }
+      .message {
+        margin-left: 1rem;
+        width: 50%;
+        &.invalid {
+          color: $red;
+        }
+        &.valid {
+          color: $green;
+        }
+      }
+    }
+  }
+}

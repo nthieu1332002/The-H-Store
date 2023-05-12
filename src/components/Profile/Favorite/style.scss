@@ -1,0 +1,101 @@
+@use "../../../scss/" as *;
+
+.favorite-header {
+  @include flex(space-between, center);
+  .favorite-title {
+    h1 {
+      line-height: 1rem;
+      color: $main-color;
+    }
+  }
+  .favorite-search {
+    position: relative;
+    input {
+      color: $main-hover-color;
+      font-weight: bold;
+      border: 2px solid $main-color;
+      border-radius: 20px;
+      outline: none;
+      padding: 0.5rem 2rem 0.5rem 1rem;
+      &:focus {
+        border: 2px solid $main-hover-color;
+      }
+    }
+    .search-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      translate: -50% 40%;
+      color: $main-hover-color;
+      font-size: 1.2rem;
+    }
+  }
+}
+.favorite-item-wrapper {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  .favorite-item {
+    position: relative;
+    border: none;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: $background-color;
+    box-shadow: rgba(204, 204, 204, 0.1) 0px 10px 15px -3px,
+      rgba(93, 93, 93, 0.05) 0px 4px 6px -2px;
+    h3,
+    h4 {
+      line-height: 1rem;
+    }
+    p {
+      font-size: 14px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .item-detail {
+      padding: 0 1.5rem 1rem;
+      .item-title {
+        color: $main-color;
+        cursor: pointer;
+        &:hover {
+          color: $main-hover-color;
+        }
+      }
+      .item-price {
+        color: $main-hover-color;
+      }
+      .item-action {
+        @include flex(space-between, center);
+        .heart-icon {
+          color: $red;
+          font-size: 25px;
+          filter: brightness(90%);
+          cursor: pointer;
+          &:hover {
+            filter: brightness(100%);
+          }
+        }
+        button {
+          cursor: pointer;
+          font-weight: bold;
+          border: none;
+          color: $white;
+          background-color: $main-color;
+          padding: 0.5rem 2rem;
+          border-radius: 30px;
+          &:hover {
+            background-color: $main-hover-color;
+          }
+        }
+      }
+    }
+  }
+}
+.favorite-null {
+  text-align: center;
+  color: $main-hover-color;
+}

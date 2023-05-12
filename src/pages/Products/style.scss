@@ -1,0 +1,121 @@
+@use "../../scss/" as *;
+
+.product-container {
+  margin: 1rem 4rem;
+  background-color: transparent;
+  @include flex(space-between, null);
+  border-radius: 10px;
+  .product-filter {
+    background-color: $background-color;
+    @include box-shadow();
+    border-radius: 10px;
+    padding: 0 2rem 1rem;
+    width: 20%;
+    height: 100%;
+    .cate-header {
+      color: $grey1;
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+    .filter-header {
+      border-bottom: 1px solid rgb(225, 225, 225);
+      letter-spacing: 0.5px;
+      p {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $main-color;
+      }
+    }
+    .filter-category {
+      @include radio($main-color, $heart1);
+      border-bottom: 1px solid rgb(225, 225, 225);
+    }
+    .filter-price {
+      .price-selector {
+        padding-right: 1rem;
+        padding-top: 1rem;
+        @include flex(center, center);
+      }
+    }
+  }
+  .product-content {
+    border-radius: 10px;
+    background-color: $background-color2;
+    @include box-shadow();
+    padding: 1rem 2rem;
+    width: 78%;
+    .product-search {
+      @include flex(space-between, null);
+      .filter-search {
+        position: relative;
+        font-size: 1.2rem;
+        display: inline-block;
+        min-width: 350px;
+        input {
+          font-size: 1rem;
+          width: 100%;
+          color: $main-color;
+          font-weight: normal;
+          border: 2px solid $main-color;
+          border-radius: 20px;
+          outline: none;
+          padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+          &:focus {
+            border: 2px solid $main-color;
+            background: transparent;
+          }
+          &::placeholder {
+            color: $main-hover-color;
+          }
+        }
+        .search-icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          translate: 100% 50%;
+          color: $main-hover-color;
+          // font-size: 1.2rem;
+        }
+        .clear {
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          right: 0;
+          translate: -50% 50%;
+          color: $main-hover-color;
+        }
+      }
+      .filter-sort {
+        p {
+          font-size: 0.9rem;
+          font-weight: bold;
+          color: $grey1;
+          .sort-by {
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 0.3rem;
+            color: $main-color;
+            background: rgba(206, 135, 207, 0.2);
+            &.active {
+              color: $red;
+              background-color: rgba(255, 75, 43, 0.2);
+            }
+          }
+        }
+      }
+    }
+  }
+  .not-found {
+    color: $main-color;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  .product-wrapper {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+  }
+}

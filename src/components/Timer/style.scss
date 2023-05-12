@@ -1,0 +1,13 @@
+@use "../../scss/" as *;
+
+.timer {
+    border-radius: 20px;
+    padding: 0.3rem 1.2rem;
+    background-color: $main-color;
+    span {
+        color: $white;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+}

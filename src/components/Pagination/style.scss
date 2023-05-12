@@ -1,0 +1,32 @@
+@use "../../scss/" as *;
+
+.pagination {
+  @include flex(center, center);
+  .index {
+    @include flex(center, center);
+    cursor: pointer;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    color: $white;
+    background-color: $background-dropdown-color;
+    font-weight: normal;
+    margin: 0 0.2rem;
+    transition: 0.2s;
+    &:hover {
+      background-color: $main-color;
+    }
+    &.active {
+      height: 40px;
+      width: 40px;
+      color: $white;
+      background-color: $main-color;
+      font-weight: bold;
+    }
+    &.inactive {
+      background-color: $grey;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use "../../scss/" as *;
+
+
+.favorite-item {
+    position: relative;
+    border: none;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: $background-color;
+    box-shadow: rgba(204, 204, 204, 0.1) 0px 10px 15px -3px,
+      rgba(93, 93, 93, 0.05) 0px 4px 6px -2px;
+    h3,
+    h4 {
+      line-height: 1rem;
+    }
+    p {
+      font-size: 14px;
+    }
+    img {
+      transition: 0.3s;
+      width: 100%;
+      min-height: 240px;
+      object-fit: fixed;
+    }
+    .item-detail {
+      padding: 0 1.5rem 1rem;
+      .item-title {
+        color: $main-color;
+        cursor: pointer;
+        &:hover {
+          color: $main-hover-color;
+        }
+      }
+      .item-price {
+        color: $main-hover-color;
+      }
+      .item-action {
+        @include flex(space-between, center);
+        .heart-icon {
+          color: $red;
+          font-size: 25px;
+          filter: brightness(90%);
+          cursor: pointer;
+          &:hover {
+            filter: brightness(100%);
+          }
+        }
+        button {
+          cursor: pointer;
+          font-weight: bold;
+          border: none;
+          color: $white;
+          background-color: $main-color;
+          padding: 0.5rem 2rem;
+          border-radius: 30px;
+          &:hover {
+            background-color: $main-hover-color;
+          }
+        }
+      }
+    }
+  }

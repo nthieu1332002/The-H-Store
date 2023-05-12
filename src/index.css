@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +8,42 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fceef8;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.error {
+  text-align: center;
+  color: #ff416c;
+  font-size: 1rem;
+}
+
+
+
+@keyframes pulse1 {
+  0% {
+    box-shadow: 0 0 0 0 #ff416c;
+  }
+}
+
+@keyframes pulse2 {
+  0% {
+    box-shadow: 0 0 0 0 rgb(239, 239, 239);
+  }
+}
+
+@keyframes pulse3 {
+  0% {
+    box-shadow: 0 0 0 0 rgb(116, 116, 116);
+  }
+}
+
+@keyframes pulse4 {
+  0% {
+    box-shadow: 0 0 0 0 rgb(208, 138, 209);
+  }
 }

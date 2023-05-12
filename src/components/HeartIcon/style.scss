@@ -1,0 +1,20 @@
+@use "../../scss/" as *;
+.favorite {
+  @include flex(center, center);
+  color: $heart1;
+  background-color: transparent;
+  font-size: 30px;
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+  border: 1px solid $heart1;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: $heart1 0px 15px 15px -10px;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    @include shadow-move($heart1);
+  }
+}

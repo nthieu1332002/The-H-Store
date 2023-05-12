@@ -1,0 +1,23 @@
+@use "../../../scss/" as *;
+
+.homepage-category {
+  padding: 1rem 2rem;
+  margin: 1rem 2rem;
+  border-radius: 20px;
+  height: 280px;
+  background-color: $background-color2;
+  .category-header {
+    @include flex(space-between, center);
+    h3 {
+      color: $main-color;
+      position: relative;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      overflow: hidden;
+    }
+  }
+  .category-content {
+    margin-top: 3rem;
+    @include flex(space-between, null);
+  }
+}

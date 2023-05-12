@@ -1,0 +1,24 @@
+@use "../../../scss/" as *;
+
+.side-bar-list {
+  .side-bar-item {
+    display: flex;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover, &.active {
+      background-color: $main-background;
+      .link-name {
+        color: $main-color;
+      }
+    }
+    .link-icon {
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      color: $main-color;
+    }
+    .link-name {
+      color: $main-hover-color;
+    }
+  }
+}
